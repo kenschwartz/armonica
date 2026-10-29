@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>local.armonica</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>{PYTHON}</string>
+    <string>-m</string>
+    <string>armonica</string>
+    <string>serve</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>{WORKING_DIR}</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>VAULT_ROOT</key>
+    <string>{VAULT_ROOT}</string>
+    <key>PUBLIC_URL</key>
+    <string>{PUBLIC_URL}</string>
+    <key>STATE_DIR</key>
+    <string>{STATE_DIR}</string>
+    <key>PORT</key>
+    <string>8765</string>
+    <key>IP_ALLOWLIST</key>
+    <string>1</string>
+  </dict>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ThrottleInterval</key>
+  <integer>10</integer>
+  <key>StandardOutPath</key>
+  <string>{LOG_DIR}/armonica.log</string>
+  <key>StandardErrorPath</key>
+  <string>{LOG_DIR}/armonica.log</string>
+</dict>
+</plist>

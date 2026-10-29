@@ -1,0 +1,19 @@
+[Unit]
+Description=Armonica (read-only Obsidian vault server for Claude)
+After=network.target
+
+[Service]
+Type=simple
+User={USER}
+ExecStart="{PYTHON}" -m armonica serve
+WorkingDirectory={WORKING_DIR}
+Environment="VAULT_ROOT={VAULT_ROOT}"
+Environment="PUBLIC_URL={PUBLIC_URL}"
+Environment="STATE_DIR={STATE_DIR}"
+Environment=PORT=8765
+Environment=IP_ALLOWLIST=1
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
